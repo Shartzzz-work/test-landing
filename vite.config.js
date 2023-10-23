@@ -8,9 +8,9 @@ const __dist = resolve(__dirname, 'dist');
 export default defineConfig({
   root: __src,
   build: {
-    watch: {
-      include: resolve(__src, '/**'),
-    },
+    // watch: {
+    //   include: resolve(__src, '/**'),
+    // },
     manifest: true,
     outDir: __dist,
     emptyOutDir: true,
