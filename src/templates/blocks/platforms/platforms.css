@@ -1,0 +1,20 @@
+#platforms {
+  position: relative;
+  position: sticky;
+  top: 130px;
+  padding-bottom: 800px;
+
+  & h2 {
+    font-weight: 800;
+    font-size: 4rem;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+}
+
+.platforms_container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 100px;
+  background: var(--c-bg);
+}
