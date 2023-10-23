@@ -1,0 +1,83 @@
+@import './templates/blocks/header/header.css';
+@import './templates/blocks/gadgets/gadgets.css';
+
+/* @import './templates/blocks/3d/3d.css'; */
+@import './templates/blocks/title/title.css';
+
+/* @import './templates/blocks/start/start.css'; */
+@import './templates/blocks/performance/performance.css';
+@import './templates/blocks/stats/stats.css';
+@import './templates/blocks/gift/gift.css';
+@import './templates/blocks/rates/rates.css';
+@import './templates/blocks/popup/popup.css';
+@import './templates/blocks/footer/footer.css';
+
+@import './templates/blocks/backgrounds/2/2.css';
+
+/* @import './templates/blocks/backgrounds/3/3.css'; */
+
+:root {
+  color: var(--c-white);
+  font-weight: 400;
+  font-size: 16px;
+
+  /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
+  font-variant-ligatures: common-ligatures;
+  font-family: Manrope, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--c-bg);
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+
+  --c-bg: #0b0d0f;
+  --c-black: black;
+  --c-black-light: #1c1e20;
+  --c-white: white;
+  --c-pink: #ec4c78;
+  --c-purple: #c3acee;
+  --c-yellow: #ffe761;
+  --c-green: #cadf6e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  /* width: 100%; */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.form_label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  & input {
+    height: 45px;
+    padding: 8px;
+    font-size: 1rem;
+    border: 2px solid var(--c-pink);
+    border-radius: 8px;
+  }
+
+  & .input_error {
+    position: absolute;
+    bottom: calc(100% + 5px);
+    color: var(--c-pink);
+  }
+}

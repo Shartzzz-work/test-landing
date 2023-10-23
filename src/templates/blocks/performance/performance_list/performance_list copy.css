@@ -1,0 +1,288 @@
+.performance_list {
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+
+  /* padding-top: 200px; */
+}
+
+.performance_list__item {
+  position: relative;
+  background: #c3acee;
+  aspect-ratio: 1;
+  border-radius: 30px;
+
+  &:nth-child(2) {
+    background: #cadf6e;
+  }
+
+  &:nth-child(3) {
+    background: white;
+  }
+
+  &:nth-child(4) {
+    background: #ed4a78;
+  }
+
+  /*
+  &.active {
+    --w: 0;
+    --h: 0;
+
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 4;
+      display: flex;
+      width: inherit;
+      height: inherit;
+      background: inherit;
+      border-radius: inherit;
+      animation: zoomitem 0.35s forwards;
+      content: '';
+    }
+  } */
+}
+
+/* @keyframes zoomitem {
+  from {
+    width: 200px;
+    height: 200px;
+  }
+
+  to {
+    width: var(--w);
+    height: var(--h);
+  }
+} */
+
+.performance_container {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  margin: auto;
+  padding: 100px;
+  border-radius: 30px;
+  transform: translateX(100px) scale(0);
+
+  /* visibility: hidden; */
+  transition: all 300ms;
+
+  &.left {
+    bottom: 100px;
+    left: 0;
+    background: #c3acee;
+    transform: translateX(100px) scale(0);
+    transform-origin: center left;
+  }
+
+  &.right {
+    right: 0;
+    left: auto;
+    background: #ed4a78;
+    transform: translateX(-100px) scale(0);
+    transform-origin: center right;
+
+    &.active {
+      z-index: +1;
+      width: calc(100% - 200px);
+      height: calc(100% - 200px);
+      transform: translateX(-100px) scale(1);
+      visibility: visible;
+    }
+  }
+
+  &.active {
+    z-index: +1;
+    width: calc(100% - 200px);
+    height: calc(100% - 200px);
+    transform: translateX(100px) scale(1);
+    visibility: visible;
+  }
+}
+
+.performance_button {
+  padding: 20px;
+  font-size: 1.1em;
+  background: none;
+  border: none;
+}
+
+.card {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  padding: 3px;
+  background: white;
+  border-radius: 32px;
+  box-shadow: #604b4a30 0 70px 30px -50px;
+  transition: all 0.5s ease-in-out;
+}
+
+.card .mail {
+  position: absolute;
+  top: 1.4rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+}
+
+.card .mail svg {
+  stroke: #fbb9b6;
+  stroke-width: 3px;
+}
+
+.card .mail svg:hover {
+  stroke: #f55d56;
+}
+
+.card .profile-pic {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  z-index: 1;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  overflow: hidden;
+  border: 0 solid #fbb9b6;
+  border-radius: 29px;
+  transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
+}
+
+.card .profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 0;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.card .profile-pic svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 0;
+  transform-origin: 45% 20%;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.card .bottom {
+  position: absolute;
+  top: 80%;
+  right: 3px;
+  bottom: 3px;
+  left: 3px;
+  z-index: 2;
+  overflow: hidden;
+  background: #fbb9b6;
+  border-radius: 29px;
+  box-shadow: rgb(96 75 74 / 18.8%) 0 5px 5px 0 inset;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
+.card .bottom .content {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 0;
+  left: 1.5rem;
+  height: 160px;
+}
+
+.card .bottom .content .name {
+  display: block;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.card .bottom .content .about-me {
+  display: block;
+  margin-top: 1rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.card .bottom .bottom-bottom {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1rem;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card .bottom .bottom-bottom .social-links-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.card .bottom .bottom-bottom .social-links-container svg {
+  height: 20px;
+  filter: drop-shadow(0 5px 5px rgb(165 132 130 / 13.3%));
+  fill: white;
+}
+
+.card .bottom .bottom-bottom .social-links-container svg:hover {
+  transform: scale(1.2);
+  fill: #f55d56;
+}
+
+.card .bottom .bottom-bottom .button {
+  padding: 0.4rem 0.6rem;
+  color: #fbb9b6;
+  font-size: 0.6rem;
+  background: white;
+  border: none;
+  border-radius: 20px;
+  box-shadow: rgb(165 132 130 / 13.3%) 0 5px 5px 0;
+}
+
+.card .bottom .bottom-bottom .button:hover {
+  color: white;
+  background: #f55d56;
+}
+
+.card:hover {
+  border-top-left-radius: 55px;
+}
+
+.card:hover .bottom {
+  top: 20%;
+  border-radius: 80px 29px 29px;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+}
+
+.card:hover .profile-pic {
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+  width: 100px;
+  height: 100px;
+  border: 7px solid #fbb9b6;
+  border-radius: 50%;
+  box-shadow: rgb(96 75 74 / 18.8%) 0 5px 5px 0;
+  transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+  aspect-ratio: 1;
+}
+
+.card:hover .profile-pic:hover {
+  border-radius: 0;
+  transform: scale(1.3);
+}
+
+.card:hover .profile-pic img {
+  object-position: 0 25px;
+  transform: scale(2.5);
+  transition: all 0.5s ease-in-out 0.5s;
+}
+
+.card:hover .profile-pic svg {
+  transform: scale(2.5);
+  transition: all 0.5s ease-in-out 0.5s;
+}

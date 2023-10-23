@@ -1,0 +1,252 @@
+.stats {
+  position: relative;
+
+  /* display: flex; */
+  display: grid;
+  grid-template: 1fr / 2fr 1fr;
+  gap: 20px;
+  height: 600px;
+  padding: 0 100px;
+  background: var(--c-bg);
+
+  & h2 {
+    font-weight: 800;
+    font-size: 4rem;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+}
+
+.stats__container_left {
+  display: flex;
+  flex-direction: column;
+
+  /* grid-area: big; */
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+
+  & > p {
+    font-size: 1.3rem;
+    opacity: 0.7;
+  }
+}
+
+.stats__item_big {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 100%;
+  color: black;
+  background: #ffccb8;
+  border-radius: 20px;
+
+  & p {
+    padding: 20px;
+    font-size: 3rem;
+  }
+}
+
+.stats__item_big_left {
+  display: grid;
+  align-content: space-between;
+}
+
+.stats__item_small_data {
+  z-index: +1;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 20px 0 0;
+}
+
+.stats__item_small_left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & strong {
+    font-size: 5em;
+  }
+
+  & span {
+    font-size: 1.5em;
+  }
+}
+
+.stats__item_big_right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stats__item_gig_pie {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  & ul {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+
+    & li {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      line-height: 1;
+
+      &::before {
+        width: 12px;
+        height: 12px;
+        border: 1px solid black;
+        content: '';
+      }
+    }
+
+    & li:nth-child(1) {
+      &::before {
+        background: #bbdced;
+      }
+    }
+
+    & li:nth-child(2) {
+      &::before {
+        background: #feaada;
+      }
+    }
+
+    & li:nth-child(3) {
+      &::before {
+        background: #ffe99a;
+      }
+    }
+  }
+}
+
+.stats__container_right {
+  position: relative;
+  display: grid;
+  align-items: end;
+
+  /* position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; */
+
+  & > img {
+    position: absolute;
+    align-self: flex-start;
+    transform: translateY(-60px);
+  }
+}
+
+.stats__item_small {
+  position: relative;
+  display: flex;
+  align-self: flex-start;
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  background: var(--c-bg);
+  border-radius: 0 20px;
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background: #ffe74e;
+    border-radius: 20px;
+    content: '';
+  }
+}
+
+/* .stats__dual {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+} */
+
+.stats__item_order {
+  position: relative;
+  width: 100%;
+  background: white;
+  border-radius: 0 20px 20px;
+
+  /* &::before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    padding: 10px 20px 0 10px;
+    color: black;
+    background: white;
+    border-radius: 20px 0 0;
+    content: 'Продажи';
+  } */
+}
+
+.tab1 {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  height: 25px;
+  padding: 0 35px 0 25px;
+  color: black;
+  line-height: 1;
+  background: white;
+  border-radius: 20px 20px 0 0;
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-top: 0 solid transparent;
+    border-right: 25px solid var(--c-bg);
+    border-bottom: 25px solid transparent;
+    content: '';
+  }
+}
+
+.stats__order_list {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  height: 100%;
+  padding: 20px;
+  color: black;
+  list-style-type: none;
+}
+
+.stats__order_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+
+  & > img {
+    display: flex;
+    width: auto;
+    height: 55px;
+  }
+
+  & span {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 1.2em;
+
+    & img {
+      height: 30px;
+    }
+  }
+}

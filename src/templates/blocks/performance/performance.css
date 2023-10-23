@@ -1,0 +1,117 @@
+@import './performance_list/performance_list.css';
+
+.performance {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+  background: var(--c-bg);
+}
+
+.performance_header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 300px;
+
+  & h2 {
+    font-weight: 800;
+    font-size: 4rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    & .title_dash {
+      color: #ffe761;
+      text-shadow: 4px 4px 0 #ffc94a;
+      -webkit-text-stroke: 2px var(--c-bg);
+    }
+  }
+
+  & img {
+    position: absolute;
+    right: -50px;
+    width: 500px;
+    height: auto;
+    transform: translateY(-110px);
+  }
+}
+
+.performance_header__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.performance_header__button_container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  & button {
+    padding: 1rem 2rem;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    background: var(--c-black-light);
+    border: 0;
+    border-radius: 100rem;
+    outline: 2.5px solid var(--c-yellow);
+    outline-offset: 3px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  & button:hover {
+    color: var(--c-black);
+    font-size: 1.1rem;
+    background: var(--c-yellow);
+    outline-offset: 4.5px;
+  }
+
+  /* & button {
+    height: 50px;
+    padding: 0 1em;
+    color: white;
+    font-size: 1.1em;
+    background: linear-gradient(145deg, #262628, #242734);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 6.31px 6.31px 8px black, -6.31px -6.31px 8px #2e3246;
+    cursor: pointer;
+
+    &:hover {
+      background: linear-gradient(145deg, #262628, #242734);
+      border-radius: 8px;
+      box-shadow: inset 6.31px 6.31px 8px black, inset -6.31px -6.31px 8px #2e3246;
+    }
+  } */
+
+  /* & button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 50px;
+    padding: 0 5px 0 20px;
+    color: white;
+    font-size: 1.1em;
+    background: none;
+    border: 2px solid white;
+    border-radius: 100px;
+    cursor: pointer;
+  } */
+
+  /* & .button_arrow {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background: #ffe761;
+    border-radius: 50%;
+    margin: 5px;
+  } */
+}
+
+.performance_description {
+  padding: 10px 0;
+  font-size: 1.5em;
+  opacity: 0.8;
+}

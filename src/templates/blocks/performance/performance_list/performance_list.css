@@ -1,0 +1,153 @@
+.performance_list {
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+
+  /* padding-top: 200px; */
+}
+
+.performance_list__card_link {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: var(--c-black);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.performance_list__card_img {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  z-index: 1;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  overflow: hidden;
+  border: 0 solid var(--card-color);
+  border-radius: 29px;
+  transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
+  pointer-events: none;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+    transition: all 0.5s ease-in-out 0s;
+  }
+}
+
+.performance_list__card_container {
+  position: absolute;
+  top: 80%;
+
+  /* right: 3px; */
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  /* padding-bottom: 4px; */
+  overflow: hidden;
+  background: var(--card-color);
+  border-radius: 24px;
+  box-shadow: rgb(96 75 74 / 18.8%) 0 5px 5px 0 inset;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
+.performance_list__card_content {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 0;
+  left: 1.5rem;
+  height: 160px;
+  color: var(--c-black);
+}
+
+.performance_list__card_bottom {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1rem;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.performance_list__card {
+  --card-color: var(--c-purple);
+
+  position: relative;
+  padding: 3px;
+  background: var(--c-white);
+  border: 7px solid var(--card-color);
+  border-radius: 32px;
+  box-shadow: #604b4a30 0 70px 30px -50px;
+  transition: all 0.5s ease-in-out;
+  aspect-ratio: 1 / 1;
+
+  &:nth-child(2) {
+    --card-color: var(--c-green);
+  }
+
+  &:nth-child(3) {
+    --card-color: var(--c-yellow);
+  }
+
+  &:nth-child(4) {
+    --card-color: var(--c-pink);
+
+    & .performance_list__card_content {
+      color: var(--c-white);
+    }
+  }
+
+  &:hover {
+    border-top-left-radius: 55px;
+  }
+
+  &:hover .performance_list__card_container {
+    top: 20%;
+    border-radius: 80px 24px 24px;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+  }
+
+  &:hover .performance_list__card_img {
+    top: -60px;
+    left: -60px;
+    z-index: 3;
+    width: 130px;
+    height: 130px;
+    border: 7px solid var(--card-color);
+    border-radius: 50%;
+    box-shadow: rgb(96 75 74 / 18.8%) 0 5px 5px 0;
+    transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+    aspect-ratio: 1;
+  }
+
+  &:hover .performance_list__card_img:hover {
+    border-radius: 0;
+    transform: scale(1.3);
+  }
+
+  &:hover .performance_list__card_img img {
+    object-position: 0 25px;
+    transform: scale(2.5);
+    transition: all 0.5s ease-in-out 0.5s;
+  }
+}
+
+.performance_list__card_button {
+  width: 90%;
+  height: 42px;
+  margin-top: auto;
+  border-radius: 100em;
+  cursor: pointer;
+}

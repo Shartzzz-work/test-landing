@@ -1,0 +1,124 @@
+.speed_container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  & h2 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    width: auto;
+    color: transparent;
+    font-size: 3rem;
+    white-space: nowrap;
+    background-image: linear-gradient(
+      143deg,
+      white 0%,
+      rgb(237 163 177 / 100%) 25%,
+      rgb(185 186 240 / 100%) 50%,
+      rgb(236 175 189 / 100%) 100%
+    );
+    background-clip: text;
+
+    & strong {
+      font-weight: normal;
+
+      /* background-image: linear-gradient(
+        143deg,
+        rgb(215 183 190 / 100%) 10%,
+        rgb(237 163 177 / 100%) 50%,
+        rgb(185 186 240 / 100%) 75%,
+        rgb(236 175 189 / 100%) 100%
+      );
+      background-clip: text; */
+    }
+
+    & span {
+      font-weight: 900;
+      font-size: 1.4em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+  }
+
+  & img {
+    position: absolute;
+    right: -50px;
+    transform: translateY(-110px);
+  }
+}
+
+/* .speed {
+  position: relative;
+  z-index: 1;
+
+  transform: translateY(-50%);
+
+  transform: translate(-300px, -50px);
+}
+
+.pie {
+  --b: 80px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: inline-grid;
+  width: var(--w);
+  margin: 5px;
+  transform: rotate(-70deg);
+  aspect-ratio: 1;
+  place-content: center;
+
+  --w: 500px;
+
+  &::before {
+    position: absolute;
+    background: conic-gradient(var(--c-bg) 0%, #c5bbf7 25%, var(--c-bg) 0%);
+    border-radius: 50%;
+    content: '';
+    inset: 0;
+    mask: radial-gradient(
+      farthest-side,
+      #0000 calc(99% - var(--b)),
+      var(--c-bg) calc(100% - var(--b))
+    );
+  }
+
+  &.min {
+    --w: 300px;
+
+    z-index: 4;
+    transform: translate(100px, 100px) rotate(-70deg);
+
+    &::before {
+      background: conic-gradient(var(--c-bg) 0%, #616ec994 25%, var(--c-bg) 0%);
+    }
+  }
+}
+
+.speed_arrow {
+  position: absolute;
+  top: 240px;
+  left: 45px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 200px;
+  height: 8px;
+  background: white;
+  border-radius: 10px;
+  transform: rotate(95deg);
+  transform-origin: center right;
+
+  &::after {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    content: '';
+  }
+} */

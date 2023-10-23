@@ -1,0 +1,12 @@
+@import './speed/speed.css';
+@import './performance_list/performance_list.css';
+
+.performance {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 100px;
+  padding: 100px;
+  background-image: linear-gradient(143deg, rgb(42 42 44 / 90%) 0%, rgb(11 13 15 / 100%) 28%);
+  border-radius: 40px 0 0;
+}
