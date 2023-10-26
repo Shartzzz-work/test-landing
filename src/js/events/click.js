@@ -2,13 +2,12 @@ import cat from '../../templates/blocks/cat/cat';
 import createApps from '../../templates/blocks/gadgets/blocks/laptop/blocks/create_apps/createApps';
 import login from '../../templates/blocks/login/login';
 import popup from '../../templates/blocks/popup/popup';
-
-import loginHTML from '../../templates/blocks/login/login.html';
+import loginPopupHTML from '../../templates/components/popups/loginPopupHTML';
 
 document.addEventListener('click', (e) => {
   switch (true) {
     case e.target.name === 'login':
-      popup(loginHTML);
+      popup(loginPopupHTML());
       break;
     case e.target.name === 'goForgot':
     case e.target.dataset.goForm === 'forgot':

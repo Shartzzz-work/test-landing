@@ -9,6 +9,10 @@
     text-align: center;
   }
 
+  & .form_label {
+    padding-top: 0;
+  }
+
   & [data-name='companyName'] {
     margin-right: auto;
     margin-bottom: 3px;
