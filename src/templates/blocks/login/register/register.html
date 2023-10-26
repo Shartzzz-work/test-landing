@@ -1,0 +1,11 @@
+<form id="registerForm">
+  <h2>Регистрация</h2>
+  {{ forms.name(required='required') }}
+  {{ forms.phone(required='required') }}
+  {{ forms.mail(name='email', required='required') }}
+  {{ forms.password(required='required') }}
+
+  {{ buttons.buttonGold('Зарегистрироваться', 'submit', 'register') }}
+
+  <p class="login_bottom">Уже зарегистрированы? <button type="button" name="goSignin">Войти</button></p>
+</form>

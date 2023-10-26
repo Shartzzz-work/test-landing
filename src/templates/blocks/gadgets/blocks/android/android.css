@@ -1,0 +1,34 @@
+@import './blocks/logo/logo.css';
+
+.gadget_android {
+  position: relative;
+  z-index: -1;
+  display: flex;
+  transform: scale(0.8) rotate(5deg) translate(-4%, 7%);
+  transition: all 200ms;
+
+  &.active {
+    transform: scale(1) rotate(0) translate(0, 0);
+  }
+}
+
+.gadget_android__img {
+  width: 100%;
+  height: 100%;
+}
+
+.gadget_android__screen {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  padding: 3.5vw 25px 25px;
+  background: var(--c-black-light);
+  border-radius: 4vw;
+
+  &.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,33 @@
+{% macro mail(name="email", placeholder="Введите e-mail", required="") %}
+<label class="form_label">
+  <input
+    type="email"
+    name="{{ name }}"
+    placeholder="{{ placeholder }}"
+    class="form_input"
+    {{ required }}
+  />
+  <span class="input_error">Обязательное поле*</span>
+</label>
+{% endmacro %}
+
+{% macro password(name="password", placeholder="Введите пароль", required="") %}
+<label class="form_label">
+  <input type="password" name="{{ name }}" placeholder="{{ placeholder }}" class="form_input" {{ required }} />
+  <span class="input_error">Обязательное поле*</span>
+</label>
+{% endmacro %}
+
+{% macro name(name="name", placeholder="Введите имя", required="") %}
+<label class="form_label">
+  <input type="name" name="{{ name }}" placeholder="{{ placeholder }}" class="form_input" {{ required }} />
+  <span class="input_error">Обязательное поле*</span>
+</label>
+{% endmacro %}
+
+{% macro phone(name="phone", placeholder="Введите телефон", required="") %}
+<label class="form_label">
+  <input type="tel" name="{{ name }}" placeholder="{{ placeholder }}" class="form_input" {{ required }} />
+  <span class="input_error">Обязательное поле*</span>
+</label>
+{% endmacro %}

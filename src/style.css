@@ -1,3 +1,5 @@
+@import './templates/components/components.css';
+
 @import './templates/blocks/header/header.css';
 @import './templates/blocks/gadgets/gadgets.css';
 
@@ -14,6 +16,8 @@
 @import './templates/blocks/footer/footer.css';
 
 @import './templates/blocks/backgrounds/2/2.css';
+
+@import './templates/blocks/cat/cat.css';
 
 /* @import './templates/blocks/backgrounds/3/3.css'; */
 
@@ -36,10 +40,14 @@
   --c-bg: #0b0d0f;
   --c-black: black;
   --c-black-light: #1c1e20;
+  --c-grey: #777;
   --c-white: white;
   --c-pink: #ec4c78;
   --c-purple: #c3acee;
   --c-yellow: #ffe761;
+  --c-yellow-dark: #ffc107;
+  --c-orange: #ff7c52;
+  --c-orange-dark: #8b442b;
   --c-green: #cadf6e;
 }
 
@@ -50,11 +58,12 @@
 }
 
 body {
-  position: relative;
+  /* position: fixed; */
   display: flex;
   flex-direction: column;
   width: 100%;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .container {
@@ -67,18 +76,73 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  padding-top: 24px;
 
   & input {
     height: 45px;
-    padding: 8px;
+    padding: 0 8px;
     font-size: 1rem;
-    border: 2px solid var(--c-pink);
     border-radius: 8px;
   }
 
   & .input_error {
     position: absolute;
-    bottom: calc(100% + 5px);
-    color: var(--c-pink);
+    bottom: calc(100% - 28px);
+    left: 2px;
+    display: none;
+    padding: 0 5px;
+    color: var(--c-orange-dark);
+    font-size: 0.75em;
+    background: var(--c-white);
+    border-radius: 4px 4px 0 0;
+  }
+
+  & input:invalid {
+    border-radius: 0 8px 8px;
+    box-shadow: 0 0 1px 2px var(--c-orange);
+
+    & ~ .input_error {
+      display: flex;
+
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: -2px;
+        z-index: +1;
+        width: 100%;
+        height: 100%;
+        border: 2px solid var(--c-black);
+        border-bottom: none;
+        border-radius: inherit;
+        content: '';
+      }
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        box-shadow: -3px -3px 1px 1px var(--c-orange), 3px -3px 1px 1px var(--c-orange);
+        content: '';
+      }
+    }
+  }
+}
+
+.footnote {
+  position: relative;
+  color: var(--c-yellow-dark);
+  cursor: help;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed inherit;
+    content: '';
   }
 }

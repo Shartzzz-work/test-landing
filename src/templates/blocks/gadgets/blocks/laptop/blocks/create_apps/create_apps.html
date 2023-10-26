@@ -1,0 +1,18 @@
+<form class="get_company">
+  <h2>Сайт + мобильные приложения</h2>
+  <p>
+    Вашим клиентам должно быть удобнее, чем у конкурентов! <br />
+    Для этого мы не только создаем быстрые и отзывчивые сайты, но и
+    <i class="footnote" data-name="nativeApp">нативные*</i> мобильные приложения в дополнение.
+  </p>
+  <label class="form_label">
+    <i class="footnote" data-name="companyName">Зачем вводить название? *</i>
+    <input type="text" name="companyName" placeholder="Введите название вашей компании" />
+  </label>
+  <label class="material-checkbox" data-name="market">
+    <input type="checkbox" checked />
+    <span class="checkmark"></span>
+    Продаете товары? *
+  </label>
+  {{ buttons.buttonGold('Создать сайт с приложениями', 'submit', 'getCompany') }}
+</form>

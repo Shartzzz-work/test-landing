@@ -1,12 +1,15 @@
-{% set title = "Супер-гуд" %} {% set keywords = "" %} {% set description = "" %} {% extends
-"src/templates/layout.html" %} {% block content %} {% include
+{% set title = "Супер-гуд" %} {% set keywords = "" %} {% set description = "" %}
+{% import "src/templates/components/buttons/buttons.html" as buttons %}
+{% import "src/templates/components/forms/forms.html" as forms %}
+{% extends
+"src/templates/layout.html" %}
+{% block content %}
+{% include
 "src/templates/blocks/gadgets/gadgets.html" %}
 <main>
-  {% include "src/templates/blocks/performance/performance.html" %}
-  {% include "src/templates/blocks/platforms/platforms.html" %}
-   {% include
-  "src/templates/blocks/stats/stats.html" %}
-  {% include "src/templates/blocks/rates/rates.html" %}
+  {% include "src/templates/blocks/performance/performance.html" %} {% include
+  "src/templates/blocks/platforms/platforms.html" %} {% include
+  "src/templates/blocks/stats/stats.html" %} {% include "src/templates/blocks/rates/rates.html" %}
   {% include "src/templates/blocks/gift/gift.html" %}
 </main>
-{# {% include "src/templates/blocks/popup/popup.html" %} #} {% endblock %}
+{% endblock %}

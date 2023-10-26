@@ -28,18 +28,36 @@ header {
   gap: 20px;
   align-items: center;
 
-  & li {
-    padding: 0.5em 1em;
+  & a,
+  [name='login'] {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: 45px;
+    padding: 0 1em;
+    color: var(--c-white);
     font-size: 1.2rem;
+    line-height: 1;
+    text-decoration: none;
     list-style-type: none;
     background: #1c1e20;
     border-radius: 8px;
-  }
+    cursor: pointer;
+    transition: all 100ms;
 
-  & a {
-    color: var(--c-white);
-    font-size: 1.2rem;
-    text-decoration: none;
+    & svg {
+      width: 25px;
+      height: 25px;
+      fill: var(--c-white);
+    }
+
+    &:hover {
+      box-shadow: 0 0 20px 0 #8b8b8b73;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
   }
 }
 

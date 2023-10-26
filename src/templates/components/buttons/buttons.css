@@ -1,4 +1,60 @@
-.button-56 {
+.button_gold {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 100%;
+  min-height: 45px;
+  max-height: 50px;
+  padding: 0 1em;
+  overflow: hidden;
+  color: #ffd277;
+  font-size: 1em;
+  background: linear-gradient(to right, #77530a, #ffd277, #77530a, #77530a, #ffd277, #77530a);
+  background-position: left;
+  background-size: 250%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 1s;
+
+  & span {
+    z-index: +1;
+    pointer-events: none;
+  }
+
+  &::before {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 97%;
+    height: 90%;
+    color: #ffd277;
+    background-color: rgb(0 0 0 / 84.2%);
+    background-size: 200%;
+    border-radius: 8px;
+    transition: background 1s;
+    content: '';
+  }
+
+  &:hover {
+    background-position: right;
+    transition: background 1s;
+  }
+
+  &:hover::before {
+    background-position: right;
+    transition: background 1s;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+/* .button-56 {
   position: relative;
   display: flex;
   align-items: center;
@@ -326,3 +382,29 @@ strong {
     transform: scale(0.75);
   }
 }
+
+.btn_mirror {
+  padding: 1rem 2.5rem;
+  color: rgb(234 234 234);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  background-color: rgb(14 14 26);
+  border: none;
+  border-radius: 0.4rem;
+  outline: none;
+  box-shadow: 0 0 60px #1f4c65;
+  cursor: pointer;
+  transition: 0.6s;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%));
+}
+
+.btn_mirror:active {
+  scale: 0.92;
+}
+
+.btn_mirror:hover {
+  color: rgb(4 4 38);
+  background: rgb(2 29 78);
+  background: linear-gradient(270deg, rgb(2 29 78 / 68.1%) 0%, rgb(31 215 232 / 87.3%) 60%);
+} */

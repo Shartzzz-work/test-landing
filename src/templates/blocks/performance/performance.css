@@ -46,68 +46,6 @@
   display: flex;
   align-items: center;
   height: 100%;
-
-  & button {
-    padding: 1rem 2rem;
-    color: white;
-    font-weight: 600;
-    font-size: 1rem;
-    background: var(--c-black-light);
-    border: 0;
-    border-radius: 100rem;
-    outline: 2.5px solid var(--c-yellow);
-    outline-offset: 3px;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-
-  & button:hover {
-    color: var(--c-black);
-    font-size: 1.1rem;
-    background: var(--c-yellow);
-    outline-offset: 4.5px;
-  }
-
-  /* & button {
-    height: 50px;
-    padding: 0 1em;
-    color: white;
-    font-size: 1.1em;
-    background: linear-gradient(145deg, #262628, #242734);
-    border: none;
-    border-radius: 8px;
-    box-shadow: 6.31px 6.31px 8px black, -6.31px -6.31px 8px #2e3246;
-    cursor: pointer;
-
-    &:hover {
-      background: linear-gradient(145deg, #262628, #242734);
-      border-radius: 8px;
-      box-shadow: inset 6.31px 6.31px 8px black, inset -6.31px -6.31px 8px #2e3246;
-    }
-  } */
-
-  /* & button {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    height: 50px;
-    padding: 0 5px 0 20px;
-    color: white;
-    font-size: 1.1em;
-    background: none;
-    border: 2px solid white;
-    border-radius: 100px;
-    cursor: pointer;
-  } */
-
-  /* & .button_arrow {
-    display: flex;
-    width: 40px;
-    height: 40px;
-    background: #ffe761;
-    border-radius: 50%;
-    margin: 5px;
-  } */
 }
 
 .performance_description {
