@@ -1,0 +1,52 @@
+.text_bg {
+  position: relative;
+  border-radius: 2rem;
+
+  &::after {
+    position: absolute;
+    top: 12%;
+    left: -5%;
+    z-index: -1;
+    width: 110%;
+    height: 90%;
+    background: var(--c-pink);
+    border-radius: 100px;
+    content: '';
+  }
+
+  &::before {
+    position: absolute;
+    top: 12%;
+    left: -5%;
+    width: 110%;
+    height: 90%;
+    border-radius: 100px;
+    outline: 3px dashed var(--c-black-light);
+    box-shadow: 0 0 0 5px var(--c-pink);
+    content: '';
+  }
+}
+
+.text_shadow {
+  color: var(--c-yellow);
+  text-shadow: 4px 4px 0 var(--c-yellow);
+  -webkit-text-stroke: 2px var(--c-bg);
+}
+
+.text_dash {
+  position: relative;
+  display: inline-block;
+  color: var(--c-purple);
+
+  &::after {
+    position: absolute;
+    top: 5%;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='#c3acee' stroke-width='10' stroke-dasharray='50' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-radius: 20px;
+    content: '';
+  }
+}

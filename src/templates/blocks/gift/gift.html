@@ -5,10 +5,7 @@
   </div>
   <form class="gift__form">
     <p>Давайте придумаем какой-то подарок, но не банальную скидку, а что-то интереснее, или с "правильной" формулировкой. Типа закажите приложение только на 1 платформу, и второе приложение мы вам подарим! Или можно подарить какое-нибудь исследование. В общем это завлекуха</p>
-    <label class="form_label">
-      <input name="email" type="text" placeholder="введите email" class="form_input">
-      <span class="input_error">Обязательное поле *</span>
-    </label>
+    {{ forms.mail(required="required") }}
     <button class="gift__button">Получить</button>
   </form>
 </section>

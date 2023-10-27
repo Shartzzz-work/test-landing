@@ -2,10 +2,14 @@ import cat from '../../templates/blocks/cat/cat';
 import createApps from '../../templates/blocks/gadgets/blocks/laptop/blocks/create_apps/createApps';
 import login from '../../templates/blocks/login/login';
 import popup from '../../templates/blocks/popup/popup';
-import loginPopupHTML from '../../templates/components/popups/loginPopupHTML';
+import loginPopupHTML from '../../templates/elements/popup/jsHTML/loginPopupHTML';
+import makeOrder from '../../templates/elements/popup/jsHTML/makeOrder';
 
 document.addEventListener('click', (e) => {
   switch (true) {
+    case e.target.name === 'makeOrder':
+      popup(makeOrder());
+      break;
     case e.target.name === 'login':
       popup(loginPopupHTML());
       break;

@@ -1,0 +1,23 @@
+{% macro buttonGold(text="Кнопка", type="button", name="") %}
+  <button type="{{ type }}" name="{{ name }}" class="button_gold"><span>{{ text }}</span></button>
+{% endmacro %}
+
+{% macro close(name="", title="закрыть окно") %}
+  <button role="button" type="button" name="{{ name }}" title="{{ title }}" class="button-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"></path></svg></button>
+{% endmacro %}
+
+<!-- HTML !-->
+{# <button class="button-56" role="button">Button 56</button> #}
+
+
+<!-- HTML !-->
+{# <button class="button-74" role="button">Button 74</button> #}
+
+<!-- HTML !-->
+{# <button class="button-59" role="button">
+  <span class="text">Button 59</span>
+</button> #}
+
+  {# <button class="btn_mirror">
+  Watch
+</button> #}

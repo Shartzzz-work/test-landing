@@ -1,4 +1,5 @@
 import './style.css';
+import './templates/blocks/gadgets/gadgets';
 import './js/events/click';
 import './js/events/mouseover';
 import './js/events/mouseout';

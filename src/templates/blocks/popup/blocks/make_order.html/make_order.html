@@ -1,0 +1,7 @@
+<form id="makeOrder" class="popup_container">
+  {{ buttons.close(name="closePopup", title="Закрыть окно") }}
+  {{ forms.name() }}
+  {{ forms.phone(required="required") }}
+
+  {{ buttons.buttonGold("Оставить заявку", type="submit", name="makeOrder") }}
+</form>

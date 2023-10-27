@@ -1,12 +1,7 @@
-@import './templates/components/components.css';
+@import './templates/elements/elements.css';
 
 @import './templates/blocks/header/header.css';
 @import './templates/blocks/gadgets/gadgets.css';
-
-/* @import './templates/blocks/3d/3d.css'; */
-@import './templates/blocks/title/title.css';
-
-/* @import './templates/blocks/start/start.css'; */
 @import './templates/blocks/performance/performance.css';
 @import './templates/blocks/stats/stats.css';
 @import './templates/blocks/platforms/platforms.css';

@@ -54,6 +54,33 @@
   }
 }
 
+.button-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  background: var(--c-white);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 100ms;
+
+  & svg {
+    width: 18px;
+    height: 18px;
+    transition: all 100ms;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: scale(1.07);
+
+    & svg {
+      transform: rotate(180deg);
+      fill: var(--c-orange-dark);
+    }
+  }
+}
+
 /* .button-56 {
   position: relative;
   display: flex;

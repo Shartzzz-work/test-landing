@@ -1,14 +1,9 @@
-document.addEventListener('mouseout', () => {
+document.addEventListener('mouseout', (e) => {
   switch (true) {
-    // case e.target.classList.contains('footnote'):
-    //   {
-    //     console.log('by');
-
-    //     const cat = document.querySelector('#cat');
-
-    //     cat.classList.remove('active');
-    //   }
-    //   break;
+    case e.target.classList.contains('footnote'):
+    case e.target.classList.contains('material-checkbox'):
+      e.target.dataset.active = 'false';
+      break;
 
     default:
       break;

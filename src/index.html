@@ -1,11 +1,13 @@
-{% set title = "Супер-гуд" %} {% set keywords = "" %} {% set description = "" %}
-{% import "src/templates/components/buttons/buttons.html" as buttons %}
-{% import "src/templates/components/forms/forms.html" as forms %}
+{% set mataTitle = "Супер-гуд" %} {% set keywords = "" %} {% set description = "" %}
+{% import "src/templates/elements/buttons/buttons.html" as buttons %}
+{% import "src/templates/elements/forms/forms.html" as forms %}
+{% import "src/templates/elements/text/text.html" as text %}
 {% extends
 "src/templates/layout.html" %}
 {% block content %}
 {% include
 "src/templates/blocks/gadgets/gadgets.html" %}
+<div id="scroll"></div>
 <main>
   {% include "src/templates/blocks/performance/performance.html" %} {% include
   "src/templates/blocks/platforms/platforms.html" %} {% include

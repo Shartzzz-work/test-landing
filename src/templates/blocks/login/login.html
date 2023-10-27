@@ -1,7 +1,6 @@
-<div id="loginPopup" data-name="signin">
-  <button role="button" type="button" name="closePopup" title="закрыть окно регистрации">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"></path></svg>
-  </button>
+<div id="loginPopup" data-name="signin" class="popup_container">
+  {{ buttons.close(name="closePopup", title="Закрыть окно регистрации") }}
+
   {% include "./forgot/forgot.html" %}
   {% include "./sign_in/sign_in.html" %}
   {% include "./register/register.html" %}

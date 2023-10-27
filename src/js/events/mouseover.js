@@ -8,7 +8,13 @@ document.addEventListener('mouseover', (e) => {
     case e.target.classList.contains('material-checkbox'):
       {
         const dataName = e.target.dataset.name;
-        cat('show', dataName);
+        e.target.dataset.active = 'true';
+
+        setTimeout(() => {
+          if (e.target.dataset.active === 'true') {
+            cat('show', dataName);
+          }
+        }, 150);
       }
       break;
 

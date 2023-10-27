@@ -23,21 +23,6 @@
   }
 }
 
-[name='closeCat'] {
-  position: absolute;
-  bottom: calc(100% - 5px);
-  left: calc(100% - 5px);
-  display: flex;
-  cursor: pointer;
-
-  & svg {
-    width: 17px;
-    height: 17px;
-    pointer-events: none;
-    fill: red;
-  }
-}
-
 .cat_container {
   position: absolute;
   bottom: calc(100% - 20px);
@@ -51,8 +36,8 @@
   font-size: 0.9em;
   background: var(--c-white);
   border-radius: 24px 24px 24px 0;
-  box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #aeaeae,
-    inset -5px -5px 10px #9e9e9e;
+  box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #aeaeae9c,
+    inset -5px -5px 10px #9e9e9e73;
   transform: scale(0);
   transform-origin: bottom left;
   transition: all 150ms;
