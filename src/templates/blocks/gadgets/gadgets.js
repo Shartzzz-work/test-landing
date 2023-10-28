@@ -1,33 +1,98 @@
-const gadgetsHTML = document.querySelector('#gadgets');
-const scrollHTML = document.querySelector('#scroll');
+/* eslint-disable max-len */
+import loader1 from '../../elements/loaders/loader1';
+import cat from '../cat/cat';
 
-const gadgetsHTMLBound = gadgetsHTML.getBoundingClientRect();
+const gadgetIos = document.querySelector('.gadget_ios');
+const gadgetIosScreen = document.querySelector('.gadget_ios__screen');
 
-scrollHTML.style.height = `${gadgetsHTMLBound.height}px`;
+const gadgetLaptop = document.querySelector('.gadget_laptop');
+const gadgetLaptopScreen = document.querySelector('.gadget_laptop__screen');
 
-const scrollHeight = scrollHTML.getBoundingClientRect().bottom - gadgetsHTMLBound.bottom;
+const gadgetAndroid = document.querySelector('.gadget_android');
+const gadgetAndroidScreen = document.querySelector('.gadget_android__screen');
 
-const titleHTML = document.querySelector('.title');
-const getCompanyHTML = document.querySelector('.get_company');
+function firstScroll(scrollValue) {
+  const titleHTML = document.querySelector('.title');
+  const getCompanyHTML = document.querySelector('.get_company');
 
-document.addEventListener('scroll', () => {
-  const scrollHTMLBound = scrollHTML.getBoundingClientRect();
-
-  const scrollDifference = scrollHTMLBound.bottom - gadgetsHTMLBound.bottom;
-
-  const scrollPercent = (scrollDifference / scrollHeight) * 100;
-
-  const scrollPercentPlus = 1 - scrollPercent / 100;
-
-  if (scrollDifference >= 0 && scrollDifference < scrollHeight) {
-    titleHTML.style = `transform: scale(${scrollPercentPlus + 1});opacity: ${
-      scrollPercent / 100
-    };position: absolute;left: 0;top: 0`;
-
-    getCompanyHTML.style = `transform: scale(${scrollPercentPlus});opacity: ${scrollPercentPlus}`;
-  } else if (scrollDifference < 0) {
-    titleHTML.style = `transform: scale(2});opacity: 0;position: absolute`;
-
-    getCompanyHTML.style = `transform: scale(1);opacity: 1`;
+  if (scrollValue >= 0.8) {
+    // eslint-disable-next-line no-param-reassign
+    scrollValue = 1;
   }
-});
+
+  titleHTML.style = `transform: scale(${1 + scrollValue});opacity: ${
+    1 - scrollValue
+  };position: absolute;left: 0;top: 0`;
+
+  getCompanyHTML.style = `transform: scale(${scrollValue});opacity: ${scrollValue}`;
+}
+
+function createApps() {
+  cat('show', 'createApps');
+
+  gadgetIos.classList.add('active');
+  gadgetIosScreen.classList.add('loader');
+  gadgetIosScreen.innerHTML = loader1();
+
+  gadgetLaptop.classList.add('active');
+  gadgetLaptopScreen.classList.add('loader');
+  gadgetLaptopScreen.innerHTML = loader1();
+
+  gadgetAndroid.classList.add('active');
+  gadgetAndroidScreen.classList.add('loader');
+  gadgetAndroidScreen.innerHTML = loader1();
+}
+
+function firstLoad() {
+  gadgetIos.classList.remove('active');
+  gadgetIosScreen.classList.remove('loader');
+  gadgetIosScreen.innerHTML = `
+  <svg xmlns="http://www.w3.org/2000/svg" class="gadgets_ios__logo" viewBox="0 0 842.32007 1000.0001">
+  <path fill="#fff" d="M824.66636 779.30363c-15.12299 34.93724-33.02368 67.09674-53.7638 96.66374-28.27076 40.3074-51.4182 68.2078-69.25717 83.7012-27.65347 25.4313-57.2822 38.4556-89.00964 39.1963-22.77708 0-50.24539-6.4813-82.21973-19.629-32.07926-13.0861-61.55985-19.5673-88.51583-19.5673-28.27075 0-58.59083 6.4812-91.02193 19.5673-32.48053 13.1477-58.64639 19.9994-78.65196 20.6784-30.42501 1.29623-60.75123-12.0985-91.02193-40.2457-19.32039-16.8514-43.48632-45.7394-72.43607-86.6641-31.060778-43.7024-56.597041-94.37983-76.602609-152.15586C10.740416 658.44309 0 598.01283 0 539.50845c0-67.01648 14.481044-124.8172 43.486336-173.25401C66.28194 327.34823 96.60818 296.6578 134.5638 274.1276c37.95566-22.53016 78.96676-34.01129 123.1321-34.74585 24.16591 0 55.85633 7.47508 95.23784 22.166 39.27042 14.74029 64.48571 22.21538 75.54091 22.21538 8.26518 0 36.27668-8.7405 83.7629-26.16587 44.90607-16.16001 82.80614-22.85118 113.85458-20.21546 84.13326 6.78992 147.34122 39.95559 189.37699 99.70686-75.24463 45.59122-112.46573 109.4473-111.72502 191.36456.67899 63.8067 23.82643 116.90384 69.31888 159.06309 20.61664 19.56727 43.64066 34.69027 69.2571 45.4307-5.55531 16.11062-11.41933 31.54225-17.65372 46.35662zM631.70926 20.0057c0 50.01141-18.27108 96.70693-54.6897 139.92782-43.94932 51.38118-97.10817 81.07162-154.75459 76.38659-.73454-5.99983-1.16045-12.31444-1.16045-18.95003 0-48.01091 20.9006-99.39207 58.01678-141.40314 18.53027-21.27094 42.09746-38.95744 70.67685-53.0663C578.3158 9.00229 605.2903 1.31621 630.65988 0c.74076 6.68575 1.04938 13.37191 1.04938 20.00505z"></path>
+</svg>
+  `;
+
+  gadgetLaptop.classList.remove('active');
+  gadgetLaptopScreen.classList.remove('loader');
+  gadgetLaptopScreen.innerHTML = `
+  <div class="title">
+  <p>Мы
+<span class="text_bg">сделаем</span>
+</p>
+  <p>ваш
+<span class="text_shadow">бизнес</span>
+</p>
+  <p>
+<span class="text_dash">в гаджетах</span>
+</p>
+</div>
+<form class="get_company">
+  <h1>Сайт + мобильные приложения</h1>
+  <p>
+    Вашим клиентам должно быть удобнее, чем у конкурентов! <br>
+    Для этого мы не только создаем быстрые и отзывчивые сайты, но и
+    <i class="footnote" data-name="nativeApp">нативные*</i> мобильные приложения в дополнение.
+  </p>
+  <label class="form_label">
+    <i class="footnote" data-name="companyName">Зачем вводить название? *</i>
+    <input type="text" name="companyName" placeholder="Введите название вашей компании">
+  </label>
+  <label class="material-checkbox" data-name="market">
+    <input type="checkbox" checked="">
+    <span class="checkmark"></span>
+    Продаете товары? *
+  </label>
+
+  <button type="submit" name="getCompany" class="button_gold"><span>Создать сайт с приложениями</span></button>
+
+</form>
+  `;
+
+  gadgetAndroid.classList.remove('active');
+  gadgetAndroidScreen.classList.remove('loader');
+  gadgetAndroidScreen.innerHTML = `
+<svg id="svg4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1714.84 1298.84" class="gadget_android__logo"><path id="path1" d="M1480.88,702.73c-.41-2.56-.8-5.1-1.23-7.64-2.59-15.74-5.81-31.3-9.56-46.65A628.23,628.23,0,0,0,1417,507.55a631.18,631.18,0,0,0-114.86-156q-15.9-15.83-32.9-30.48a633.85,633.85,0,0,0-78.35-57.71c.24-.4.44-.82.69-1.22q19-32.79,38-65.54l37.11-64q13.35-23,26.64-46a58.45,58.45,0,0,0,5-11.24,57.79,57.79,0,0,0,.84-32.5,61.52,61.52,0,0,0-2.61-7.61A59.3,59.3,0,0,0,1292.9,28a57.31,57.31,0,0,0-20-19.91A57.72,57.72,0,0,0,1237.53.3a60.46,60.46,0,0,0-8.88,1.62,57.5,57.5,0,0,0-27.76,16.84,58.35,58.35,0,0,0-7.29,9.94q-13.32,23-26.63,46l-37.11,64q-19,32.79-38,65.54c-1.38,2.39-2.77,4.77-4.15,7.19-1.92-.77-3.82-1.53-5.74-2.27A628.83,628.83,0,0,0,857.47,168c-2.16,0-4.31,0-6.49,0a629,629,0,0,0-200.93,34.88q-10.92,3.81-21.64,8c-1.29-2.23-2.61-4.47-3.88-6.7q-19-32.77-38-65.54l-37.11-64q-13.35-23-26.64-46a58.84,58.84,0,0,0-7.28-9.94A57.55,57.55,0,0,0,487.76,2a60.48,60.48,0,0,0-8.9-1.62A57.83,57.83,0,0,0,468,.24,57.65,57.65,0,0,0,423.51,28a55.27,55.27,0,0,0-3.63,7.21,54.23,54.23,0,0,0-2.61,7.61,57.79,57.79,0,0,0,.82,32.5,59.44,59.44,0,0,0,5,11.25q13.35,23,26.64,46,18.58,32,37.13,64,19,32.79,38,65.54c.09.18.22.37.32.55a632.69,632.69,0,0,0-72.71,52.67q-20.6,17.28-39.62,36.22A635.57,635.57,0,0,0,343.7,433,629.09,629.09,0,0,0,244.84,648.5q-5.61,23-9.56,46.65c-.42,2.54-.82,5.11-1.21,7.64q-2.12,13.73-3.61,27.61H1484.38q-1.52-13.89-3.59-27.61Z" fill="#34a853"></path><path id="path2" d="M1183.58,557c25.1-16.71,28.75-55.35,8.14-86.31s-57.62-42.53-82.69-25.82-28.74,55.34-8.14,86.3S1158.51,573.68,1183.58,557Z" fill="#202124"></path><path id="path3" d="M615.05,531.26c20.6-31,17-69.6-8.14-86.31s-62.11-5.14-82.71,25.82-16.94,69.61,8.14,86.31,62.13,5.15,82.71-25.82Z" fill="#202124"></path><path id="path4" d="M1516.22,1164.84c0-45.16,32.6-80.8,73.73-80.8s71.22,34.63,71.22,80.8-30.59,81.81-71.22,81.81-73.73-36.14-73.73-81.81Zm-141.44,126h57.68V1039.88h-57.68Zm-9-334.74c0,21.58,17.56,39.14,38.12,39.14s37.62-17.56,37.62-39.14c0-20.08-17.06-37.14-37.62-37.14S1365.75,936,1365.75,956.07Zm-226.2,208.27c0-45.16,33.1-80.3,75.73-80.3s75.74,35.13,75.74,80.3-33.61,82.31-75.74,82.31S1139.55,1210,1139.55,1164.34Zm-58.69,0c0,75.28,59.19,134.5,134.42,134.5s134.42-59.22,134.42-134.5-58.18-132.49-134.42-132.49S1080.86,1089.57,1080.86,1164.34Zm-156,126.47h57.68V1159.32c0-52.19,27.58-75.28,73.73-75.28,8.52,0,15,.51,21.06,2v-50.69c-6-2-16.55-3.51-28.08-3.51-78.25,0-124.39,49.18-124.39,127.47Zm-231.22-126c0-45.17,32.6-80.81,73.73-80.81s71.22,34.63,71.22,80.81-30.59,81.8-71.22,81.8S693.66,1210.52,693.66,1164.85Zm-58.68,0c0,72.77,58.18,134,126.89,134,28.59,0,54.67-11.54,70.22-30.61h2.51v22.58h57.68V898.86H834.6v161.6h-2.51c-15.05-18.07-41.13-28.61-70.22-28.61-69.21,0-126.89,60.73-126.89,133Zm-252.79,126h57.68v-147c0-35.13,23.57-59.73,56.17-59.73s56.18,24.6,56.18,59.73v147H609.9v-147c0-61.23-48.65-111.92-113.86-111.92s-113.85,50.69-113.85,111.92ZM117.37,1140.25l62.19-178.16h3l62.19,178.16ZM0,1290.81H65.2l32.6-93.34H264.32l32.6,93.34h65.21L217.18,898.86H145Zm1584.43,8c28.59,0,54.67-11.54,70.22-30.61h2.51v22.58h57.68V898.86h-57.68v161.6h-2.51c-15.05-18.07-41.13-28.61-70.22-28.61-69.21,0-126.89,60.73-126.89,133s58.18,134,126.89,134Z" fill="#fff"></path></svg>
+  `;
+}
+
+export { firstScroll, createApps, firstLoad };

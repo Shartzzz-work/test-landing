@@ -14,7 +14,7 @@ document.addEventListener('mouseover', (e) => {
           if (e.target.dataset.active === 'true') {
             cat('show', dataName);
           }
-        }, 150);
+        }, 160);
       }
       break;
 

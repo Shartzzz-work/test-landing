@@ -18,6 +18,20 @@
     margin-right: auto;
     margin-bottom: 3px;
   }
+
+  & [name='companyName'] {
+    &.alert {
+      outline: 2px solid var(--c-pink);
+      transform-origin: center;
+      animation: beat 0.5s infinite alternate;
+    }
+  }
+}
+
+@keyframes beat {
+  to {
+    transform: scale(1.01);
+  }
 }
 
 .material-checkbox {

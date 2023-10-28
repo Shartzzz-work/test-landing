@@ -37,7 +37,9 @@
   --c-black-light: #1c1e20;
   --c-grey: #777;
   --c-white: white;
-  --c-pink: #ec4c78;
+
+  /* --c-pink: #ec4c78; */
+  --c-pink: #bb2649;
   --c-purple: #c3acee;
   --c-yellow: #ffe761;
   --c-yellow-dark: #ffc107;
@@ -53,12 +55,16 @@
 }
 
 body {
-  /* position: fixed; */
+  position: fixed;
   display: flex;
   flex-direction: column;
   width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
+
+  &.scroll {
+    position: relative;
+  }
 }
 
 .container {
