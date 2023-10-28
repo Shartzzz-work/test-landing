@@ -18,14 +18,14 @@ document.addEventListener('wheel', (e) => {
 
   // }
 
-  if (scrollValue <= 1.5) {
+  if (scrollValue <= 1) {
     firstScroll(scrollValue);
     catHTML.classList.remove('active');
     companyNameInput.classList.remove('alert');
   }
 
   if (
-    scrollValue >= 1.5 &&
+    scrollValue >= 0.9 &&
     companyNameInput &&
     companyNameInput.value === '' &&
     catImg.src !== '/assets/img/ginger-cat-sad.png'
@@ -34,8 +34,8 @@ document.addEventListener('wheel', (e) => {
     companyNameInput.classList.add('alert');
   }
 
-  if (scrollValue >= 2) {
-    scrollValue = 2;
+  if (scrollValue >= 1.5) {
+    scrollValue = 1.5;
     createApps();
     document.querySelector('body').classList.add('scroll');
   } else if (!companyNameInput) {

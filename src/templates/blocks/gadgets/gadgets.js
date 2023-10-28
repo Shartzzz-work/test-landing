@@ -15,7 +15,7 @@ function firstScroll(scrollValue) {
   const titleHTML = document.querySelector('.title');
   const getCompanyHTML = document.querySelector('.get_company');
 
-  if (scrollValue >= 0.8) {
+  if (scrollValue >= 0.5) {
     // eslint-disable-next-line no-param-reassign
     scrollValue = 1;
   }
